@@ -1,0 +1,9 @@
+{
+  "name": "sonos-amp", "version": "0.1.0", "private": true,
+  "description": "A classic desktop frame for Sonos with MilkDrop visuals",
+  "main": "main.cjs", "author": "", "license": "UNLICENSED",
+  "scripts": {"start": "electron .", "test": "node --test tests/*.test.cjs", "package": "electron-builder --mac dir"},
+  "dependencies": {"butterchurn": "2.6.7", "butterchurn-presets": "2.4.7"},
+  "devDependencies": {"electron": "^42.0.0", "electron-builder": "^26.0.12"},
+  "build": {"appId": "local.sonosamp.desktop", "productName": "Sonos Amp", "files": ["main.cjs", "preload.cjs", "security.cjs", "ui/**/*", "package.json"], "mac": {"category": "public.app-category.music", "identity": null, "extendInfo": {"NSMicrophoneUsageDescription": "Use audio input to animate MilkDrop visuals. Audio is not recorded or uploaded."}}}
+}
