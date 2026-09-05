@@ -1,0 +1,3 @@
+const {test} = require('node:test'); const assert = require('node:assert/strict'); const {isSonosURL} = require('../security.cjs');
+test('Sonos HTTPS navigation stays in the isolated player',()=>{for(const url of ['https://play.sonos.com/','https://login.sonos.com/login','https://www.sonos.com/'])assert.equal(isSonosURL(url),true);});
+test('lookalike hosts and unsafe protocols cannot navigate the player',()=>{for(const url of ['https://sonos.com.evil.example/','https://evilsonos.com','http://play.sonos.com/','javascript:alert(1)','file:///tmp/example','not a url','https://sonos.com@evil.example/'])assert.equal(isSonosURL(url),false);});
