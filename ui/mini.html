@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self'; img-src 'self' data:; connect-src 'none'; media-src 'self' blob:"><title>Sonos Amp — Mini</title><link rel="stylesheet" href="mini.css"></head>
+<body>
+<div id="toolbar"><span class="drag-label">ϟ SONOS AMP</span><button id="mic-toggle" title="Audio-reactive visuals use your microphone — click to turn it on/off" aria-pressed="false">MIC OFF</button><button id="vis-toggle" title="Show/hide MilkDrop visuals" aria-pressed="false">VIS</button><button id="restore" title="Back to full window">⛶</button></div>
+<div id="roombar"><label for="room">ROOM</label><select id="room"><option value="">—</option></select></div>
+<div id="mini-visual" hidden><canvas id="milkdrop"></canvas></div>
+<!-- The real Sonos now-playing bar (transport, art, volume) is a native WebContentsView
+     the main process positions here directly; this spacer just reserves its footprint. -->
+<div id="player-space"></div>
+<script src="../node_modules/butterchurn/lib/butterchurn.min.js"></script><script src="../node_modules/butterchurn-presets/lib/butterchurnPresets.min.js"></script><script src="visualizer-utils.js"></script><script src="mini.js"></script>
+</body></html>

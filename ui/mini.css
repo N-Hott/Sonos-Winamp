@@ -1,0 +1,18 @@
+@font-face{font-family:'VT323';src:url('fonts/vt323.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root{color-scheme:dark;--green:#b6fa57;--ink:#15161c}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ink);color:#e6e6e8;font:14px 'VT323','Courier New',monospace;overflow:hidden;height:100%}
+#toolbar{height:26px;display:flex;align-items:center;gap:8px;padding:0 8px;-webkit-app-region:drag;border-bottom:1px solid #ffffff10;background:linear-gradient(#2b2c36,#1c1d24)}
+.drag-label{font:11px 'VT323','Courier New',monospace;letter-spacing:1.5px;color:var(--green);flex:1}
+#toolbar button{-webkit-app-region:no-drag;cursor:pointer;font:11px 'VT323','Courier New',monospace;letter-spacing:1px;color:#e7e7ec;background:linear-gradient(#41434e,#2b2c36);border:1px solid #636571;border-right-color:#17181f;border-bottom-color:#17181f;padding:3px 8px}
+#toolbar button:hover{filter:brightness(1.25)}
+#toolbar button[aria-pressed="true"]{background:var(--green);color:#18200f;border-color:#c8ff82}
+#mic-toggle{opacity:.55}
+#mic-toggle[aria-pressed="true"]{opacity:1;background:linear-gradient(#5a2b2b,#3a1c1c)!important;border-color:#7a3a3a!important;color:#ffb3b3!important;animation:mic-pulse 1.6s ease-in-out infinite}
+@keyframes mic-pulse{0%,100%{opacity:1}50%{opacity:.6}}
+#roombar{height:24px;display:flex;align-items:center;gap:6px;padding:0 8px;background:#1a1b22;border-bottom:1px solid #ffffff0c}
+#roombar label{font:10px 'VT323','Courier New',monospace;letter-spacing:1.4px;color:#93959d}
+#roombar select{flex:1;background:#101116;border:1px solid #41434c;color:#d1d2d8;font:12px 'VT323','Courier New',monospace;height:18px;padding:0 4px}
+#mini-visual{height:160px;background:#030305;overflow:hidden}
+#mini-visual canvas{width:100%;height:100%;display:block}
+#player-space{height:86px}
